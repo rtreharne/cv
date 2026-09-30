@@ -1,0 +1,149 @@
+---
+import '../styles/global.css';
+
+const modules = [
+  { code: 'BIOS103', name: 'Introductory Practical Skills in Biosciences I', level: 'Year one' },
+  { code: 'LIFE707', name: 'Biological Data Skills', level: 'Master’s' },
+  { code: 'LIFE733', name: 'Coding for Life Sciences', level: 'Master’s' },
+  { code: 'BIOS226', name: 'Data Science and Bioinformatics', level: 'Undergraduate' },
+];
+
+const profileUrl = 'https://www.liverpool.ac.uk/people/robert-treharne';
+const assetBase = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111514" />
+    <meta name="description" content="Teaching quantitative and computational skills for bioscience at the University of Liverpool." />
+    <title>Dr Robert Treharne | Bioscience, data &amp; code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Robert Treharne, home">RT<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#teaching">Teaching</a>
+        <a href="#practice">Practice</a>
+        <a href="#community">HiPy</a>
+      </nav>
+      <a class="contact-link" href="mailto:R.Treharne@liverpool.ac.uk">Get in touch <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <img class="hero-image" src={`${assetBase}images/moon-surface.jpg`} alt="Apollo 11 lunar module shadow cast across the Moon's surface" fetchpriority="high" />
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow"><span class="status-dot"></span> Biosciences · University of Liverpool</p>
+          <h1 id="page-title">Dr Robert<br />Treharne</h1>
+          <p class="hero-summary">Making sense of biological data, one line of code at a time.</p>
+          <a class="hero-link" href="#teaching">Explore my teaching <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="hero-index" aria-hidden="true">53°24′N &nbsp; 2°58′W</p>
+        <p class="hero-caption">Apollo 11 · NASA / JSC</p>
+      </section>
+
+      <section class="intro section-wrap" aria-labelledby="intro-title">
+        <p class="section-label"><span>01</span> / THE WORK</p>
+        <div class="intro-copy">
+          <h2 id="intro-title">Curiosity, meet<br /><em>computation.</em></h2>
+          <div class="intro-detail">
+            <div class="intro-profile">
+              <img src={`${assetBase}images/robert-treharne.webp`} alt="Dr Robert Treharne" width="88" height="88" />
+              <span>Teaching &amp; learning<br />University of Liverpool</span>
+            </div>
+            <p>I teach quantitative and computational skills to bioscience students at the University of Liverpool, helping them work confidently with the data behind life science.</p>
+            <a class="text-link" href={profileUrl} target="_blank" rel="noreferrer">University profile <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="teaching-section" id="teaching" aria-labelledby="teaching-title">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="section-label"><span>02</span> / IN THE CLASSROOM</p>
+            <h2 id="teaching-title">Teaching <span>the tools</span><br />to ask better questions.</h2>
+            <p class="section-deck">From first-year quantitative skills to postgraduate data analysis and coding in R and Python.</p>
+          </div>
+          <div class="module-list">
+            {modules.map((module, index) => (
+              <article class="module-row">
+                <span class="module-number">0{index + 1}</span>
+                <div class="module-name">
+                  <span class="module-code">{module.code}</span>
+                  <h3>{module.name}</h3>
+                </div>
+                <span class="module-level">{module.level}</span>
+                <span class="module-arrow" aria-hidden="true">↗</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="practice-section section-wrap" id="practice" aria-labelledby="practice-title">
+        <p class="section-label"><span>03</span> / BEYOND THE LECTURE</p>
+        <div class="practice-content">
+          <div>
+            <h2 id="practice-title">Better ways<br />to <em>learn.</em></h2>
+          </div>
+          <div class="practice-detail">
+            <p class="practice-lead">Learning should be something students can get their hands on.</p>
+            <p>I develop educational platforms to support learning across the School of Biosciences, bringing practical, approachable tools into the student experience.</p>
+            <div class="role-marker"><span class="marker-line"></span><span>School of Biosciences</span><strong>GAI Champion</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="community-section" id="community" aria-labelledby="community-title">
+        <div class="community-inner section-wrap">
+          <p class="section-label"><span>04</span> / OPEN TO EVERYONE</p>
+          <div class="community-layout">
+            <div>
+              <p class="community-kicker">Co-founder <span>·</span> Liverpool</p>
+              <h2 id="community-title">Hi<span>Py</span></h2>
+            </div>
+            <div class="community-copy">
+              <p class="community-lead">A coding community with the door wide open.</p>
+              <p>HiPy brings people together to learn and share coding through free events for University of Liverpool staff and students, and the wider Liverpool public.</p>
+              <span class="community-tag">Code · Learn · Share</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section section-wrap" aria-labelledby="about-title">
+        <div>
+          <p class="section-label"><span>05</span> / A LITTLE CONTEXT</p>
+          <h2 id="about-title">A physicist by<br />training.</h2>
+        </div>
+        <div class="education-list">
+          <article class="education-row">
+            <span class="education-degree">PhD</span>
+            <div><h3>Condensed Matter Physics</h3><p>University of Durham</p></div>
+          </article>
+          <article class="education-row">
+            <span class="education-degree">MSc</span>
+            <div><h3>Physics</h3><p>University of Warwick</p></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-name" href="#top">Robert Treharne<span>.</span></a>
+      <p>Teaching bioscience for a data-rich world.</p>
+      <div class="footer-links">
+        <a href="mailto:R.Treharne@liverpool.ac.uk">Email <span aria-hidden="true">↗</span></a>
+        <a href={profileUrl} target="_blank" rel="noreferrer">Liverpool profile <span aria-hidden="true">↗</span></a>
+      </div>
+      <span class="footer-place">Liverpool, UK · 2026</span>
+    </footer>
+  </body>
+</html>
